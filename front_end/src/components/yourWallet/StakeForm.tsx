@@ -17,14 +17,14 @@ export const StakeForm = ({ token }: StakeFormProps) => {
     const tokenBalance = useTokenBalance(tokenAddress, account)
     const formattedTokenBalance: number = tokenBalance ? parseFloat(formatUnits(tokenBalance, 18)) : 0
     const { notifications } = useNotifications()
-
+    console.log(formattedTokenBalance)
     const [amount, setAmount] = useState<number | string | Array<number | string>>(0)
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newAmount = event.target.value === "" ? "" : Number(event.target.value)
         setAmount(newAmount)
         console.log(newAmount)
     }
-
+    console.log(name)
     const { approveAndStake, state: approveAndStakeErc20State } = useStakeTokens(tokenAddress)
     const handleStakeSubmit = () => {
         const amountAsWei = utils.parseEther(amount.toString())

@@ -40,6 +40,7 @@ export const useStakeTokens = (tokenAddress: string) => {
         if (approveAndStakeErc20State.status === "Success") {
             stakeSend(amountToStake, tokenAddress)
         }
+        // eslint-disable-next-line
     }, [approveAndStakeErc20State, amountToStake, tokenAddress])
 
 
